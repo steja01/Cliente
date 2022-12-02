@@ -1,0 +1,69 @@
+body {
+    background: url("fondo.jpg");
+    background-size: cover;
+    font-family:calibri;   
+  }
+
+.caja {
+    width: 710px;
+    height: 550px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 30px 30px;
+    background-color: white;
+    border: 3px solid rgb(0, 0, 0);
+ }
+  .caja .logo {
+    width: 100px;
+    height: 100px;
+    top: -50px;
+    left: calc(50% - 50px);
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid rgb(0, 0, 0);
+  }
+
+  .caja h1 {
+    padding-top: 30px;
+    text-align: center;
+    font-size: 25px;
+  }
+  .caja section{text-align: center;}
+  /*.caja input{
+    width: 150px;
+  }*/
+  .gurdo{
+    width: 400px;
+    height: 30px;
+    font-size: 30px;
+    text-align: center;
+  }
+  .argui img{
+    width: 300px;
+    height: 200px;
+    border-radius: 40px;
+  }
+  .anillas{
+    width: 100px;
+    height: 560px;
+    position: absolute;
+    top: -8px;
+    left: calc(7% - 99px);
+  }
+  .botones{
+    width: 710px;
+    height: 50px;
+    position: absolute;
+    bottom: 0px;
+  }
+  .sig{
+    position: absolute;
+    right: 60px;
+  }
+  .atr{
+    position: absolute;
+    left: 60px;
+  }

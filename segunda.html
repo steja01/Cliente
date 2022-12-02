@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es_ES">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetario</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="tortilla.jpg" />
+</head>
+<body>
+    <div class="caja"><p id="final">
+        <img src="anillas1.png" alt="anillas"   class="anillas">
+        <img src="gorro.jpg" class="logo" alt="recetario Logo"> 
+        <section>
+            <h1>Buenos días chef,</h1>
+            <h3>¿Cuál es el siguiente ingrediente?</h3>
+            <input class="gurdo" type="text" name="ingrediente" id="ingrediente" placeholder="Introduce un ingrediente..."><br><br>
+            <input type="number" name="cantidad" id="cantidad" placeholder="Introduce la cantidad...">&nbsp;&nbsp;&nbsp;
+            <select name="tipo" id="tipo">
+                <option value="gr">Gramos</option>
+                <option value="ml">MiliLitros</option>
+                <option value="ud">Unidades</option>
+            </select><br><br>
+            <button type="button" onclick="aniadir()">Añadir ingrediente</button>
+            <h3>¿Cuál es el ingrediente que quieres eliminar?</h3>
+            <input class="gurdo" type="text" name="eliminarIngrediente" id="eliminarIngrediente" placeholder="Introduce un ingrediente para eliminar..."><br><br>
+            <button type="button" onclick="eliminar()">Eliminar ingrediente</button>
+            <div class="botones">
+                <button type="button" onclick="atras()" class="atr">Atras</button>
+                <button type="button" onclick="siguiente2()" class="sig">Siguiente</button>
+            </div>
+        </section>
+    </p></div>
+</body>
+<script>
+    var nombreReceta = sessionStorage.getItem('nombre');
+        numeroComensales = sessionStorage.getItem('comensales');
+        ingrediente = sessionStorage.getItem('ingrediente');
+        cantidad = sessionStorage.getItem('cantidad');
+        tipo = sessionStorage.getItem('tipo');
+
+    console.log(nombreReceta, numeroComensales, ingrediente, cantidad, tipo);
+
+    var receton = new receta(nombreReceta, numeroComensales);
+    receton.añadir(ingrediente, cantidad, tipo);
+</script>
+</html>
