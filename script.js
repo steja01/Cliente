@@ -52,15 +52,26 @@ function siguiente(){
 function atras(){
     window.location.href = "portada.html"
 }
-function aniadir(){
-    var ingrediente = document.getElementById('ingrediente').value;
-        cantidad = document.getElementById('cantidad').value;
-        tipo = document.getElementById('tipo').value;
-    receton.añadir(ingrediente, cantidad, tipo);
-        document.getElementById('ingrediente').value = "";
-        document.getElementById('cantidad').value = "";
-    console.log(receton);
-}
+    function aniadir(){
+        var ingredienteAniadir = document.getElementById('ingrediente').value;
+            cantidad = document.getElementById('cantidad').value;
+            tipo = document.getElementById('tipo').value;
+            existe = false;
+            for (let i = 0; i < receton.ingrediente.length; i++) {
+                if (receton.ingrediente[i].toUpperCase()==ingredienteAniadir.toUpperCase()) {
+                   alert ('El elemento ya existe')
+                   existe = true;     
+                }
+            }
+
+            if (existe == false) {
+                receton.añadir(ingredienteAniadir,cantidad,tipo);
+            }
+            document.getElementById('ingrediente').value = "";
+            document.getElementById('cantidad').value = "";
+            console.log(receton);
+            console.log(existe);
+    }
 function eliminar(){
     var ingrediente = document.getElementById('eliminarIngrediente').value;
     receton.eliminar(ingrediente);
